@@ -5,6 +5,14 @@ with a 30 mm hand plunger and a 60 mm ram joined by an oil pipe, both cut open, 
 Bourdon gauge on each tee of the pipe. The two gauges always read the same pressure;
 the ram rises a quarter as far as the plunger is pushed and carries four times the force.
 
+## Prompt
+
+Built from one Claude Code prompt with the `anatomy` skill:
+
+```
+/anatomy explain me how the Pascal principle works, interactive.
+```
+
 ## Build
 
 ```sh

@@ -20,6 +20,13 @@
   .card .fig { color: var(--muted); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; }
   .card h2 { font-size: 16px; font-weight: 600; margin: 0; }
   .card p { margin: 0; color: var(--muted); font-size: 13px; }
+  .prompt { display: flex; flex-direction: column; gap: 2px; margin-top: 4px; }
+  .prompt span { color: var(--muted); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; }
+  .prompt code { font: inherit; font-size: 12.5px; color: var(--fg); background: var(--bg); border-radius: 6px; padding: 6px 8px; box-shadow: inset 0 0 0 1px var(--ring); white-space: pre-wrap; word-break: break-word; }
+  section.how { margin-top: 40px; max-width: 76ch; }
+  section.how h2 { font-size: 15px; font-weight: 600; letter-spacing: 0.04em; margin: 0 0 8px; }
+  section.how p { color: var(--muted); margin: 0 0 10px; }
+  section.how pre { margin: 0 0 10px; padding: 10px 12px; border-radius: 8px; background: var(--card); box-shadow: inset 0 0 0 1px var(--ring); overflow-x: auto; font-size: 12.5px; }
   .links { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; }
   .links a { display: inline-flex; align-items: center; height: 28px; padding: 0 12px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--ring); color: var(--fg); text-decoration: none; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
   .links a:hover { box-shadow: inset 0 0 0 1px var(--accent); }
@@ -38,33 +45,47 @@
       <a href="falcon-booster/falcon-booster.html"><img src="falcon-booster/shots/desk-light.png" alt="Falcon 9 first stage on its pad with grid fins and landing legs" loading="lazy"></a>
       <div class="body"><span class="fig">Fig 1</span><h2>Falcon 9 first stage</h2>
         <p>A return-to-launch-site flight from the throttle table: propellant drains, grid fins and legs deploy, nine plumes follow the engines.</p>
+        <p class="prompt"><span>Prompt</span><code>/anatomy explain me how the spacex first-stage booster works, interactive.</code></p>
         <div class="links"><a href="falcon-booster/falcon-booster.html">dark</a><a href="falcon-booster/falcon-booster-light.html">light</a></div></div>
     </article>
     <article class="card">
       <a href="steam-engine/steam-engine.html"><img src="steam-engine/shots/desk-light.png" alt="Horizontal mill steam engine with cut cylinder and slide valve" loading="lazy"></a>
       <div class="body"><span class="fig">Fig 2</span><h2>Horizontal mill steam engine</h2>
         <p>Slide valve, piston, crosshead and flywheel; the indicator diagram and torque follow the valve events for each end.</p>
+        <p class="prompt"><span>Prompt</span><code>/anatomy explain me how a steam engine works, interactive.</code></p>
         <div class="links"><a href="steam-engine/steam-engine.html">dark</a><a href="steam-engine/steam-engine-light.html">light</a></div></div>
     </article>
     <article class="card">
       <a href="pascal-lift/pascal-lift.html"><img src="pascal-lift/shots/desk-light.png" alt="Bench hydraulic lift with two gauges" loading="lazy"></a>
       <div class="body"><span class="fig">Fig 3</span><h2>Pascal's principle</h2>
         <p>A bench hydraulic lift: push the small piston, lift the weights on the big one, and read the same pressure on both gauges.</p>
+        <p class="prompt"><span>Prompt</span><code>/anatomy explain me how the Pascal principle works, interactive.</code></p>
         <div class="links"><a href="pascal-lift/pascal-lift.html">dark</a><a href="pascal-lift/pascal-lift-light.html">light</a></div></div>
     </article>
     <article class="card">
       <a href="locomotive/locomotive.html"><img src="locomotive/shots/desk-light.png" alt="0-4-0 steam locomotive with boiler, firebox and cylinder cut open" loading="lazy"></a>
       <div class="body"><span class="fig">Fig 4</span><h2>0-4-0 steam locomotive</h2>
         <p>Boiler, firebox and cylinder cut open; the motion works on the near side and exhaust puffs leave the chimney on each beat.</p>
+        <p class="prompt"><span>Prompt</span><code>/anatomy explain me how a steam locomotive works, interactive.</code></p>
         <div class="links"><a href="locomotive/locomotive.html">dark</a><a href="locomotive/locomotive-light.html">light</a></div></div>
     </article>
     <article class="card">
       <a href="f22/f22.html"><img src="f22/shots/desk-light.png" alt="F-22A Raptor with its right engine bay opened" loading="lazy"></a>
       <div class="body"><span class="fig">Fig 5</span><h2>Lockheed Martin F-22A Raptor</h2>
         <p>Opened F119 bay with turning spools; one stick drives stabilators, rudders, flaperons, ailerons and the vectoring nozzles; a throttle lights the afterburner.</p>
+        <p class="prompt"><span>Prompt</span><code>/anatomy explain me how a Lockheed Martin F-22 Raptor works, interactive.</code></p>
         <div class="links"><a href="f22/f22.html">dark</a><a href="f22/f22-light.html">light</a></div></div>
     </article>
   </div>
+  <section class="how">
+    <h2>How these were made</h2>
+    <p>Claude Code with the <a href="https://github.com/wheresryan22/anatomy">anatomy</a> skill, installed with the skills CLI:</p>
+    <pre>npx skills add https://github.com/wheresryan22/anatomy --skill anatomy</pre>
+    <p>The installer writes to <code>.agents/skills/anatomy</code>; Claude Code reads <code>.claude/skills/</code>, so a symlink and <code>/reload-skills</code> made the command available:</p>
+    <pre>ln -s ../../.agents/skills/anatomy .claude/skills/anatomy
+/reload-skills</pre>
+    <p>Then one prompt per figure, exactly as shown on each card. Nothing else was specified: the object, camera, parts list, model, shaders and checks are the skill's workflow applied by the agent. Four of the five are Epic subjects built as their Hero cut; each figure's README lists what the full version would add.</p>
+  </section>
   <footer>Figures MIT, Jean Paul Ruiz. Kit MIT, <a href="https://github.com/wheresryan22/anatomy">wheresryan22/anatomy</a>.</footer>
 </main>
 </body>

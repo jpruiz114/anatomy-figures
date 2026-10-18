@@ -6,6 +6,14 @@ steam chest are cut open; the piston, the steam on both sides of it, and the val
 its three ports all move with the crank. One model (`model.mjs`) gives the piston and
 valve positions, the pressure in each end, torque and power.
 
+## Prompt
+
+Built from one Claude Code prompt with the `anatomy` skill:
+
+```
+/anatomy explain me how a steam engine works, interactive.
+```
+
 ## Build
 
 ```sh

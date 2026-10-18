@@ -13,6 +13,14 @@ This is the Hero cut of an Epic subject. Not modelled: the weapons bays and thei
 the serpentine intake ducts, leading-edge flaps, the cockpit interior, the far engine bay,
 the gear retraction, the radar and sensor apertures, a spotting tour of the airframe.
 
+## Prompt
+
+Built from one Claude Code prompt with the `anatomy` skill:
+
+```
+/anatomy explain me how a Lockheed Martin F-22 Raptor works, interactive.
+```
+
 ## Build
 
 ```sh

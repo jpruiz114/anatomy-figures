@@ -10,6 +10,14 @@ crank and eccentric rod. Exhaust puffs leave the chimney at each release, four p
 This is the Hero cut of an Epic subject. Not modelled: the far-side motion, true
 Walschaerts gear with a reverser, the cab interior, injectors, blower, brakes, a tender.
 
+## Prompt
+
+Built from one Claude Code prompt with the `anatomy` skill:
+
+```
+/anatomy explain me how a steam locomotive works, interactive.
+```
+
 ## Build
 
 ```sh

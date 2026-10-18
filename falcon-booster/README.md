@@ -6,6 +6,14 @@ WebGL plume, grid fins and landing legs that unfold, and two propellant tanks th
 drain. One flight model (`model.mjs`) drives every moving part, the readout and the
 caption numbers.
 
+## Prompt
+
+Built from one Claude Code prompt with the `anatomy` skill:
+
+```
+/anatomy explain me how the spacex first-stage booster works, interactive.
+```
+
 ## Build
 
 Needs Node 20.10 or later and Google Chrome (for the checks).

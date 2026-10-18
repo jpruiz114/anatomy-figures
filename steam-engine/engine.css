@@ -1,0 +1,179 @@
+.se {
+  --se-cavity: #1a1a1a;
+  --se-port: #060606;
+  --se-steam: #c8d6e8;
+  --se-rim-inside: #0e0e0e;
+  --se-button-hover: #232323;
+  --se-button-ring: #ffffff14;
+  --se-part-ring: #ffffff10;
+  --se-part-hover: #ffffff0a;
+  --se-lamp-off: #4a4a4a;
+  --se-lamp-on: #ffd27a;
+  --se-lamp-glow: #ffc45a66;
+}
+
+[data-theme="light"] .se {
+  --se-cavity: #cfcfcc;
+  --se-port: #8a8a87;
+  --se-steam: #dfe8f4;
+  --se-rim-inside: #d6d6d3;
+  --se-button-hover: #f0f0ed;
+  --se-button-ring: #0000001a;
+  --se-part-ring: #00000014;
+  --se-part-hover: #0000000a;
+  --se-lamp-off: #c4c4c4;
+  --se-lamp-on: #b8860b;
+  --se-lamp-glow: #b8860b55;
+}
+
+.se .iso-plate {
+  padding: 52px 24px 64px;
+  overflow: hidden;
+}
+.se-stage {
+  position: relative;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: ew-resize;
+}
+.se-stage:focus-visible {
+  outline: 1px solid var(--anatomy-muted);
+  outline-offset: 6px;
+}
+.se-stage > svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.se-cavity {
+  fill: var(--se-cavity);
+  stroke: none;
+}
+.se-port {
+  fill: var(--se-port);
+  stroke: none;
+}
+.se-rim-inside {
+  fill: var(--se-rim-inside);
+  stroke: none;
+}
+.se-cut {
+  stroke-width: 0.8px;
+}
+.se-steam-fill {
+  fill: var(--se-steam);
+  stroke: none;
+  mix-blend-mode: normal;
+}
+[data-theme="light"] .se .se-steam-fill {
+  mix-blend-mode: multiply;
+}
+
+.se-controls {
+  position: absolute;
+  left: 20px;
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--anatomy-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--anatomy-muted);
+}
+.se-play {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 28px;
+  padding: 0 13px 0 11px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--anatomy-face);
+  color: var(--anatomy-strong);
+  font: inherit;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px var(--se-button-ring);
+  transition: background 200ms var(--anatomy-ease), transform 160ms var(--anatomy-ease);
+}
+.se-play:hover { background: var(--se-button-hover); }
+.se-play:active { transform: scale(0.97); }
+.se-play:focus-visible { outline: 1px solid var(--anatomy-muted); outline-offset: 3px; }
+.se-lamp {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--se-lamp-off);
+  transition: background 240ms var(--anatomy-ease), box-shadow 240ms var(--anatomy-ease);
+}
+.se-play[data-state="on"] .se-lamp {
+  background: var(--se-lamp-on);
+  box-shadow: 0 0 10px 2px var(--se-lamp-glow);
+}
+.se-events {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.se-event {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--anatomy-muted);
+  font: 12.5px/1.3 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px var(--se-part-ring);
+  transition: color 160ms var(--anatomy-ease), background 160ms var(--anatomy-ease);
+}
+.se-event:hover,
+.se-event:focus-visible,
+.se-event[data-on] {
+  color: var(--anatomy-strong);
+  background: var(--se-part-hover);
+  outline: none;
+}
+.se-num {
+  font-family: var(--anatomy-mono);
+  font-size: 10px;
+  color: var(--anatomy-muted);
+}
+.se-live {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  .se .iso-plate { padding: 48px 8px 88px; }
+  .se .iso-plate-corner[data-corner="readout"] {
+    bottom: 46px;
+    right: 0;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .se-controls {
+    left: 14px;
+    bottom: 14px;
+    gap: 10px;
+    max-width: calc(100% - 28px);
+    flex-wrap: wrap;
+  }
+  .se-hint { font-size: 9.5px; letter-spacing: 0.06em; line-height: 1.3; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .se * { transition: none !important; }
+}

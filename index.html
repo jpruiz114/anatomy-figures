@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>anatomy-figures</title>
+<style>
+  :root { color-scheme: dark light; --bg: #141414; --fg: #e8e8e4; --muted: #9a9a94; --card: #1d1d1d; --ring: #ffffff14; --accent: #ff9a3c; }
+  @media (prefers-color-scheme: light) { :root { --bg: #f7f7f5; --fg: #1a1a1a; --muted: #6b6b66; --card: #ffffff; --ring: #0000001a; --accent: #d9480f; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.5 ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+  main { max-width: 1180px; margin: 0 auto; padding: 48px 24px 64px; }
+  h1 { font-size: 22px; font-weight: 600; letter-spacing: 0.04em; margin: 0 0 8px; }
+  p.lead { color: var(--muted); margin: 0 0 32px; max-width: 70ch; }
+  p.lead a, footer a { color: inherit; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
+  .card { background: var(--card); border-radius: 10px; box-shadow: inset 0 0 0 1px var(--ring); overflow: hidden; display: flex; flex-direction: column; }
+  .card img { display: block; width: 100%; aspect-ratio: 1180 / 803; object-fit: cover; background: #0e0e0e; }
+  .card .body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 8px; }
+  .card .fig { color: var(--muted); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; }
+  .card h2 { font-size: 16px; font-weight: 600; margin: 0; }
+  .card p { margin: 0; color: var(--muted); font-size: 13px; }
+  .links { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; }
+  .links a { display: inline-flex; align-items: center; height: 28px; padding: 0 12px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--ring); color: var(--fg); text-decoration: none; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .links a:hover { box-shadow: inset 0 0 0 1px var(--accent); }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>anatomy-figures</h1>
+  <p class="lead">Interactive isometric figures that explain how machines work. Built with Claude Code and the
+    <a href="https://github.com/wheresryan22/anatomy">anatomy</a> skill: one prompt per figure, a pure model driving every
+    moving part, SVG painted in depth order with a WebGL layer for plumes and steam. Drag, press keys, or just watch the idle tour.
+    Source and prompts: <a href="https://github.com/jpruiz114/anatomy-figures">github.com/jpruiz114/anatomy-figures</a>.</p>
+  <div class="grid">
+    <article class="card">
+      <a href="falcon-booster/booster.html"><img src="falcon-booster/shots/desk.png" alt="Falcon 9 first stage on its pad with grid fins and landing legs" loading="lazy"></a>
+      <div class="body"><span class="fig">Fig 1</span><h2>Falcon 9 first stage</h2>
+        <p>A return-to-launch-site flight from the throttle table: propellant drains, grid fins and legs deploy, nine plumes follow the engines.</p>
+        <div class="links"><a href="falcon-booster/booster.html">dark</a><a href="falcon-booster/booster-light.html">light</a></div></div>
+    </article>
+    <article class="card">
+      <a href="steam-engine/engine.html"><img src="steam-engine/shots/desk.png" alt="Horizontal mill steam engine with cut cylinder and slide valve" loading="lazy"></a>
+      <div class="body"><span class="fig">Fig 2</span><h2>Horizontal mill steam engine</h2>
+        <p>Slide valve, piston, crosshead and flywheel; the indicator diagram and torque follow the valve events for each end.</p>
+        <div class="links"><a href="steam-engine/engine.html">dark</a><a href="steam-engine/engine-light.html">light</a></div></div>
+    </article>
+    <article class="card">
+      <a href="pascal-lift/lift.html"><img src="pascal-lift/shots/desk.png" alt="Bench hydraulic lift with two gauges" loading="lazy"></a>
+      <div class="body"><span class="fig">Fig 3</span><h2>Pascal's principle</h2>
+        <p>A bench hydraulic lift: push the small piston, lift the weights on the big one, and read the same pressure on both gauges.</p>
+        <div class="links"><a href="pascal-lift/lift.html">dark</a><a href="pascal-lift/lift-light.html">light</a></div></div>
+    </article>
+    <article class="card">
+      <a href="locomotive/locomotive.html"><img src="locomotive/shots/desk.png" alt="0-4-0 steam locomotive with boiler, firebox and cylinder cut open" loading="lazy"></a>
+      <div class="body"><span class="fig">Fig 4</span><h2>0-4-0 steam locomotive</h2>
+        <p>Boiler, firebox and cylinder cut open; the motion works on the near side and exhaust puffs leave the chimney on each beat.</p>
+        <div class="links"><a href="locomotive/locomotive.html">dark</a><a href="locomotive/locomotive-light.html">light</a></div></div>
+    </article>
+    <article class="card">
+      <a href="f22/f22.html"><img src="f22/shots/desk.png" alt="F-22A Raptor with its right engine bay opened" loading="lazy"></a>
+      <div class="body"><span class="fig">Fig 5</span><h2>Lockheed Martin F-22A Raptor</h2>
+        <p>Opened F119 bay with turning spools; one stick drives stabilators, rudders, flaperons, ailerons and the vectoring nozzles; a throttle lights the afterburner.</p>
+        <div class="links"><a href="f22/f22.html">dark</a><a href="f22/f22-light.html">light</a></div></div>
+    </article>
+  </div>
+  <footer>Figures MIT, Jean Paul Ruiz. Kit MIT, <a href="https://github.com/wheresryan22/anatomy">wheresryan22/anatomy</a>.</footer>
+</main>
+</body>
+</html>

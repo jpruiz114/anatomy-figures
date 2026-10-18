@@ -1,0 +1,56 @@
+.ff {
+  --ff-blend: screen;
+  --ff-cavity: #161616;
+  --ff-glass: #8fb4ff;
+  --ff-intake: #090909;
+  --ff-button-hover: #232323;
+  --ff-button-ring: #ffffff14;
+  --ff-part-ring: #ffffff10;
+  --ff-part-hover: #ffffff0a;
+  --ff-lamp-off: #4a4a4a;
+  --ff-lamp-on: #ff9a3c;
+  --ff-lamp-glow: #ff8a3c66;
+}
+[data-theme="light"] .ff {
+  --ff-blend: normal;
+  --ff-cavity: #cbcbc8;
+  --ff-glass: #3e63dd;
+  --ff-intake: #6f6f6c;
+  --ff-button-hover: #f0f0ed;
+  --ff-button-ring: #0000001a;
+  --ff-part-ring: #00000014;
+  --ff-part-hover: #0000000a;
+  --ff-lamp-off: #c4c4c4;
+  --ff-lamp-on: #d9480f;
+  --ff-lamp-glow: #d9480f55;
+}
+.ff .iso-plate { padding: 52px 24px 64px; overflow: hidden; }
+.ff-stage { position: relative; touch-action: pan-y; -webkit-tap-highlight-color: transparent; user-select: none; -webkit-user-select: none; cursor: move; }
+.ff-stage:focus-visible { outline: 1px solid var(--anatomy-muted); outline-offset: 6px; }
+.ff-stage > svg, .ff-stage > canvas { display: block; width: 100%; height: auto; }
+.ff-plume { position: absolute; inset: 0; height: 100% !important; pointer-events: none; mix-blend-mode: var(--ff-blend); }
+.ff-cavity { fill: var(--ff-cavity); stroke: none; }
+.ff-intake { fill: var(--ff-intake); stroke: none; }
+.ff-cut { stroke-width: 0.8px; }
+.ff-glass .iso-shade[data-shade="0"] { fill: color-mix(in srgb, var(--anatomy-shade-0), var(--ff-glass) 18%); }
+.ff-glass .iso-shade[data-shade="1"] { fill: color-mix(in srgb, var(--anatomy-shade-1), var(--ff-glass) 18%); }
+.ff-glass .iso-shade[data-shade="2"] { fill: color-mix(in srgb, var(--anatomy-shade-2), var(--ff-glass) 18%); }
+.ff-glass .iso-shade[data-shade="3"] { fill: color-mix(in srgb, var(--anatomy-shade-3), var(--ff-glass) 18%); }
+.ff-glass .iso-top { fill: color-mix(in srgb, var(--anatomy-top), var(--ff-glass) 24%); }
+.ff-glass .iso-fill { fill: color-mix(in srgb, var(--anatomy-paper), var(--ff-glass) 18%); }
+.ff-controls { position: absolute; left: 20px; bottom: 16px; display: flex; align-items: center; gap: 10px; font-family: var(--anatomy-mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--anatomy-muted); }
+.ff-throttle { display: inline-flex; align-items: center; gap: 8px; height: 28px; padding: 0 12px 0 10px; border: 0; border-radius: 999px; background: var(--anatomy-face); color: var(--anatomy-muted); font: inherit; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; box-shadow: inset 0 0 0 1px var(--ff-button-ring); transition: background 200ms var(--anatomy-ease), color 200ms var(--anatomy-ease); }
+.ff-throttle:hover { background: var(--ff-button-hover); }
+.ff-throttle[data-on] { color: var(--anatomy-strong); }
+.ff-throttle:focus-visible { outline: 1px solid var(--anatomy-muted); outline-offset: 3px; }
+.ff-lamp { width: 7px; height: 7px; border-radius: 50%; background: var(--ff-lamp-off); transition: background 240ms var(--anatomy-ease), box-shadow 240ms var(--anatomy-ease); }
+.ff-throttle[data-on] .ff-lamp { background: var(--ff-lamp-on); box-shadow: 0 0 10px 2px var(--ff-lamp-glow); }
+.ff-hint { margin-left: 6px; }
+.ff-live { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 640px) {
+  .ff .iso-plate { padding: 48px 8px 96px; }
+  .ff .iso-plate-corner[data-corner="readout"] { bottom: 52px; right: 0; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+  .ff-controls { left: 14px; bottom: 14px; gap: 8px; max-width: calc(100% - 28px); flex-wrap: wrap; }
+  .ff-hint { font-size: 9.5px; letter-spacing: 0.06em; line-height: 1.3; }
+}
+@media (prefers-reduced-motion: reduce) { .ff * { transition: none !important; } }

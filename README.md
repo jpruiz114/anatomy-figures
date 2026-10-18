@@ -10,9 +10,9 @@ the parts.
 
 | Fig | Figure | Page | What moves |
 |---|---|---|---|
-| 1 | Falcon 9 first stage | [dark](falcon-booster/booster.html) · [light](falcon-booster/booster-light.html) | A return-to-launch-site flight: throttle table, propellant, grid fins and legs, engine plumes |
-| 2 | Horizontal mill steam engine | [dark](steam-engine/engine.html) · [light](steam-engine/engine-light.html) | Slide valve, piston, crosshead, flywheel; indicator diagram per end |
-| 3 | Pascal's principle | [dark](pascal-lift/lift.html) · [light](pascal-lift/lift-light.html) | A bench hydraulic lift: push the small piston, lift the weights, read both gauges |
+| 1 | Falcon 9 first stage | [dark](falcon-booster/falcon-booster.html) · [light](falcon-booster/falcon-booster-light.html) | A return-to-launch-site flight: throttle table, propellant, grid fins and legs, engine plumes |
+| 2 | Horizontal mill steam engine | [dark](steam-engine/steam-engine.html) · [light](steam-engine/steam-engine-light.html) | Slide valve, piston, crosshead, flywheel; indicator diagram per end |
+| 3 | Pascal's principle | [dark](pascal-lift/pascal-lift.html) · [light](pascal-lift/pascal-lift-light.html) | A bench hydraulic lift: push the small piston, lift the weights, read both gauges |
 | 4 | 0-4-0 steam locomotive | [dark](locomotive/locomotive.html) · [light](locomotive/locomotive-light.html) | Cut boiler, firebox and cylinder; valve gear and motion; exhaust puffs on the beat |
 | 5 | Lockheed Martin F-22A Raptor | [dark](f22/f22.html) · [light](f22/f22-light.html) | Opened F119 bay with turning spools; stick drives every surface and the vectoring nozzles; afterburner |
 

@@ -6,7 +6,7 @@ single self-contained HTML page: SVG drawn back to front from a pure model of th
 WebGL layer for plumes, steam and light, and a live readout driven by the same numbers that move
 the parts.
 
-**Gallery (GitHub Pages):** https://jpruiz114.github.io/anatomy-figures/
+**Gallery (GitHub Pages):** https://jeanpaulruizvallejo.com/anatomy-figures/
 
 | Fig | Figure | Page | What moves |
 |---|---|---|---|
@@ -70,7 +70,7 @@ $NODE ../scripts/lines.mjs f22.html --reduced   # line ends: 0
 
 Each figure folder has the same layout: `model.mjs` (the pure model), `parts.mjs` (moving parts
 shared by build and page), `build.mjs` (geometry, card, page), `live.js` (interaction and shaders),
-a stylesheet, a README and a `shots/` folder with the desktop capture.
+a stylesheet, a README and a `shots/` folder with the light desktop capture.
 
 ## Licence
 

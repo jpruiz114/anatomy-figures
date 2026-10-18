@@ -1,5 +1,5 @@
 # Build and check artefacts
 */shots/*
-!*/shots/desk.png
+!*/shots/desk-light.png
 .DS_Store
 node_modules/
